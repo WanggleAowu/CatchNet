@@ -46,11 +46,10 @@ dependencies {
 uploadArchives {
     repositories.mavenDeployer {
         repository(url: "file:///Users/android/AndroidStudioProjects/CatchNet/maven")
-//        repository(url: "https://github.com/WanggleAowu/CatchNet.git")
         pom.project {
             groupId "com.wanggle.catchnet" // 可以随意取，一般取包名
             artifactId "catchnet" // 可以随意取，一般取库的名字
-            version "1.0.0" // 版本号
+            version "1.0.1" // 版本号
         }
     }
 }
