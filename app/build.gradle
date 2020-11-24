@@ -1,5 +1,5 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'kotlin-android'
     id 'kotlin-android-extensions'
 }
@@ -9,7 +9,6 @@ android {
     buildToolsVersion "30.0.0"
 
     defaultConfig {
-        applicationId "com.wanggle.catchnet"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
@@ -43,4 +42,15 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:4.1.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.6.1'
 
+}
+
+apply plugin: "maven"
+uploadArchives {
+    repositories.mavenDeployer {
+        pom.groupId = "com.wanggle"
+        pom.artifactId = "catchnet"
+        pom.version = "1.0.0"
+        pom.packaging = "aar"
+        repository(url: "https://github.com/WanggleAowu/CatchNet.git")
+    }
 }
