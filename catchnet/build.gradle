@@ -44,13 +44,16 @@ dependencies {
 
 }
 
-apply plugin: "maven"
+//发布Maven配置
+apply plugin: 'maven'
+
 uploadArchives {
     repositories.mavenDeployer {
-        pom.groupId = "com.wanggle"
-        pom.artifactId = "catchnet"
-        pom.version = "1.0.0"
-        pom.packaging = "aar"
+        pom.groupId = "com.wanggle.catchnet" // 唯一标识（通常为模块包名，也可以任意）
+        pom.artifactId = "catchnet"//项目名称（通常为类库模块名称，也可以任意）
+        pom.version = "1.0.0" // 版本号
+        pom.packaging = "aar"//
+        repository(url: "file:///Users/android/AndroidStudioProjects/CatchNet")
         repository(url: "https://github.com/WanggleAowu/CatchNet.git")
     }
 }
